@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+
+  server1:
+    build:
+      context: ../backend-servers/server1
+      dockerfile: ../../docker/Dockerfile.server
+    container_name: server1
+    ports:
+      - "3001:3000"
+
+  server2:
+    build:
+      context: ../backend-servers/server2
+      dockerfile: ../../docker/Dockerfile.server
+    container_name: server2
+    ports:
+      - "3002:3000"
+
+  server3:
+    build:
+      context: ../backend-servers/server3
+      dockerfile: ../../docker/Dockerfile.server
+    container_name: server3
+    ports:
+      - "3003:3000"
+
+  load-balancer:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.lb
+    container_name: load_balancer
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server1
+      - server2
+      - server3
