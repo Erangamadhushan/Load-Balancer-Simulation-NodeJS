@@ -12,3 +12,7 @@ A custom-built reverse proxy and load balancing engine built from scratch in Nod
 - Round Robin Load Balancing
 - Request Forwarding Proxy
 - Stress Testing Support
+
+# Let’s visualize mentally:
+
+Client → Express route → Algorithm → Health check filter → Request forwarder → Backend server → Response → Metrics update → Client
