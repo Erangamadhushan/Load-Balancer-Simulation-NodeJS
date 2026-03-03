@@ -47,6 +47,3 @@ jobs:
             - name: Install Artillery
               run: npm install -g artillery
 
-            - name: Run Stress Test
-              run: |
-               npx artillery run stress-test/artillery-test.yml

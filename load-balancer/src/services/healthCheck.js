@@ -12,10 +12,9 @@ function startHealthCheck(servers) {
     }
 
     console.log("Health Check Update:");
-    servers.forEach(s =>
-      console.log(`${s.url} → ${s.isHealthy ? "Healthy" : "Unhealthy"}`)
+    servers.forEach((s) =>
+      console.log(`${s.url} → ${s.isHealthy ? "Healthy" : "Unhealthy"}`),
     );
-
   }, 5000); // every 5 seconds
 }
 

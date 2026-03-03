@@ -11,7 +11,7 @@ async function forwardRequest(targetServer, path = "/") {
     return {
       data: response.data,
       status: response.status,
-      responseTime
+      responseTime,
     };
   } catch (error) {
     throw new Error(`Failed to reach ${targetServer}`);
