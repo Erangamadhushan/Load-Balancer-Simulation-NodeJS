@@ -1,0 +1,45 @@
+name: CI - Load Balancer Simulation
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+
+            - name: Install load balancer dependencies
+              run: |
+                    cd load-balancer
+                    npm install
+
+            - name: Install server1 dependencies
+              run: |
+                    cd backend-servers/server1
+                    npm install
+
+            - name: Install server2 dependencies
+              run: |
+                    cd backend-servers/server2
+                    npm install
+
+            - name: Install server3 dependencies
+              run: |
+                    cd backend-servers/server3
+                    npm install
+
+            - name: Build Docker images
+              run: |
+                    cd docker
+                    docker compose build
