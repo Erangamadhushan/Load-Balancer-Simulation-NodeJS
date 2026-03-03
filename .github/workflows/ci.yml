@@ -49,4 +49,4 @@ jobs:
 
             - name: Run Stress Test
               run: |
-               artillery run stress-test/artillery-test.yml
+               npx artillery run stress-test/artillery-test.yml
