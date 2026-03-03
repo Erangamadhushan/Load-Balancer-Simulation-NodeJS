@@ -43,3 +43,10 @@ jobs:
               run: |
                     cd docker
                     docker compose build
+
+            - name: Install Artillery
+              run: npm install -g artillery
+
+            - name: Run Stress Test
+              run: |
+               artillery run stress-test/artillery-test.yml
