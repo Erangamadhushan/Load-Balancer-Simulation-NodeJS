@@ -7,8 +7,8 @@ app.get("/", (req, res) => {
   setTimeout(() => {
     res.json({
       message: "Response from Server 3",
-    server: "Server 3",
-    timestamp: new Date()
+      server: "Server 3",
+      timestamp: new Date(),
     });
   }, delay);
 });
