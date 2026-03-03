@@ -42,4 +42,4 @@ jobs:
             - name: Build Docker images
               run: |
                     cd docker
-                    docker-compose build
+                    docker compose build
